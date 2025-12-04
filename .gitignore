@@ -1,0 +1,17 @@
+# Sanal Ortam
+.venv/
+venv/
+env/
+
+# Python Önbellekleri
+__pycache__/
+*.pyc
+
+# ZenML ve Model Çıktıları (Çok Büyük Dosyalar)
+.zen/
+zenml_sft_output/
+*.safetensors
+*.bin
+data/
+# IDE Ayarları
+.vscode/

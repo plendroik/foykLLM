@@ -1,0 +1,10 @@
+zenml
+transformers
+datasets
+peft
+trl
+bitsandbytes
+accelerate
+torch
+faiss-cpu
+sentence-transformers
