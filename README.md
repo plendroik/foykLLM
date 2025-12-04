@@ -29,46 +29,10 @@ Donanım: NVIDIA GPU (CUDA)
 Bash
 
 llm/
-├── data/                   # Eğitim ve RAG verileri (.jsonl)
 ├── train_sft.py            # Modeli eğiten kod (Fine-Tuning Pipeline)
 ├── zenml_pipeline.py       # RAG veritabanını oluşturan kod (Ingestion Pipeline)
-├── chat_app.py             # Kullanıcı arayüzü (Inference / Chatbot)
-└── zenml_sft_output/       # Eğitilen model adaptörlerinin (LoRA) çıktısı
-⚙️ Kurulum
-Gerekli kütüphaneleri yükleyin:
+└── chat_app.py             # Kullanıcı arayüzü (Inference / Chatbot) 
 
-Bash
-
-pip install zenml transformers datasets peft bitsandbytes accelerate torch faiss-cpu sentence-transformers
-Ollama'yı kurun ve temel modeli çekin:
-
-Bash
-
-ollama pull qwen2:1.5b
-ZenML'i başlatın:
-
-Bash
-
-zenml init
-🏃‍♂️ Çalıştırma Adımları
-1. Modeli Eğitme (SFT)
-Modele Hacivat-Karagöz üslubunu öğretmek için eğitimi başlatın:
-
-Bash
-
-python train_sft.py
-2. Bilgi Bankasını Oluşturma (RAG Ingestion)
-Veri setini okuyup vektör veritabanını oluşturmak ve ZenML Artifact Store'a kaydetmek için:
-
-Bash
-
-python zenml_pipeline.py
-3. Sohbeti Başlatma (Chat App)
-Eğitilmiş indeksleri ZenML'den çekip Hacivat ve Karagöz ile konuşmak için:
-
-Bash
-
-python chat_app.py
 📊 Örnek Çıktılar
 Kullanıcı: Yar bana bir eğlence medet!
 
@@ -84,7 +48,3 @@ KARAGÖZ: Ne? Mahallede turşu mu satacaksın?
 
 🔮 Gelecek Planları
 Daha büyük bir model (Qwen2.5-7B veya Llama-3-8B) ile dil yeteneğini artırmak.
-
-Ollama yerine eğitilen LoRA adaptörünü doğrudan sisteme entegre etmek.
-
-ZenML Dashboard üzerinden deney takibi ve model versiyonlama.
